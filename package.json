@@ -27,6 +27,8 @@
     "@vue/tsconfig": "^0.8.1",
     "eslint": "^9.33.0",
     "eslint-plugin-vue": "~10.4.0",
+    "html-validate": "^10.1.2",
+    "html-validate-vue": "^7.3.1",
     "jiti": "^2.5.1",
     "npm-run-all2": "^8.0.4",
     "prettier": "3.6.2",
