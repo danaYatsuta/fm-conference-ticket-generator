@@ -1,1 +1,22 @@
 @import 'tailwindcss';
+
+/* Weights used: 400, 500, 700, 800 */
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+
+@theme {
+  --color-*: initial;
+
+  --color-neutral-0: hsl(0, 0%, 100%);
+  --color-neutral-300: hsl(252, 6%, 83%);
+  --color-neutral-500: hsl(245, 15%, 58%);
+  --color-neutral-700: hsl(245, 19%, 35%);
+  --color-neutral-900: hsl(248, 70%, 10%);
+
+  --color-orange-500: hsl(7, 88%, 67%);
+  --color-orange-700: hsl(7, 71%, 60%);
+
+  --color-text-graident-from: hsl(7, 86%, 67%);
+  --color-text-graident-to: hsl(0, 0%, 100%);
+
+  --font-inconsolata: 'Inconsolata', monospace;
+}
