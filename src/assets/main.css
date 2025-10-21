@@ -23,15 +23,18 @@
 
 .background-mobile {
   background-image:
+    url(images/pattern-squiggly-line-bottom-mobile-tablet.svg),
     url(images/pattern-squiggly-line-top.svg), url(images/pattern-circle.svg),
     url(images/pattern-lines-mobile.png), url(images/background-mobile.png);
-  background-size: 120px, 100px, cover, cover;
+  background-size: 260px, 120px, 100px, cover, cover;
   background-position-x:
+    0%,
     right,
     -20px,
     0%,
     0%;
   background-position-y:
+    bottom,
     25px,
     -30px,
     0%,
