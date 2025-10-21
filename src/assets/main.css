@@ -20,3 +20,8 @@
 
   --font-inconsolata: 'Inconsolata', monospace;
 }
+
+.background-mobile {
+  background-image: url(images/pattern-lines-mobile.png), url(images/background-mobile.png);
+  background-size: cover;
+}
