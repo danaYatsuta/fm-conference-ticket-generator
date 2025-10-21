@@ -26,7 +26,7 @@
     url(images/pattern-squiggly-line-bottom-mobile-tablet.svg),
     url(images/pattern-squiggly-line-top.svg), url(images/pattern-circle.svg),
     url(images/pattern-lines-mobile.png), url(images/background-mobile.png);
-  background-size: 260px, 120px, 100px, cover, cover;
+  background-size: 300px, 120px, 110px, contain, cover;
   background-position-x:
     0%,
     right,
