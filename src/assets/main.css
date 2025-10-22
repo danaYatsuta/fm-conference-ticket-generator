@@ -1,7 +1,7 @@
-@import 'tailwindcss';
-
 /* Weights used: 400, 500, 700, 800 */
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+
+@import 'tailwindcss';
 
 @theme {
   --color-*: initial;
