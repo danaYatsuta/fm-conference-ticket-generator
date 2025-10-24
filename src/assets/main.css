@@ -25,19 +25,15 @@
   background-image:
     url(images/pattern-squiggly-line-bottom-mobile-tablet.svg),
     url(images/pattern-squiggly-line-top.svg), url(images/pattern-circle.svg),
-    url(images/pattern-lines-mobile.png), url(images/background-mobile.png);
-  background-size: 300px, 120px, 110px, contain, cover;
-  background-position-x:
-    0%,
-    right,
-    -20px,
-    0%,
-    0%;
-  background-position-y:
-    bottom,
-    25px,
-    -30px,
-    0%,
-    0%;
+    url(images/pattern-circle.svg), url(images/pattern-lines-mobile.png),
+    url(images/background-mobile.png);
+  background-size: 300px, 120px, 110px, 110px, contain, cover;
+  background-position:
+    0% bottom,
+    right 25px,
+    -20px -30px,
+    right -50px top 540px,
+    0% 0%,
+    0% 0%;
   background-repeat: no-repeat;
 }
