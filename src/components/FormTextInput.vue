@@ -17,7 +17,7 @@ const { type = 'text', placeholder = '' } = defineProps<Props>()
       :id
       :type
       :placeholder
-      class="mt-2 h-14 w-full rounded-xl border border-neutral-500 bg-neutral-700/50 px-4 text-lg backdrop-blur-md placeholder:text-neutral-300"
+      class="mt-2 h-14 w-full rounded-xl border border-neutral-500 bg-neutral-700/25 px-4 text-lg backdrop-blur-md placeholder:text-neutral-300"
     />
   </div>
 </template>

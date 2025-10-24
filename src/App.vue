@@ -22,7 +22,7 @@ import FormTextInput from './components/FormTextInput.vue'
           <span>Upload Avatar</span>
 
           <span
-            class="mt-2 flex h-32 flex-col items-center justify-center gap-4 rounded-xl border border-dashed border-neutral-500 bg-neutral-700/50"
+            class="mt-2 flex h-32 flex-col items-center justify-center gap-4 rounded-xl border border-dashed border-neutral-500 bg-neutral-700/25"
           >
             <span
               class="h-12 w-12 rounded-xl border border-neutral-700 bg-neutral-700/50 bg-[url(images/icon-upload.svg)] bg-center bg-no-repeat"
