@@ -32,7 +32,7 @@ import FormTextInput from './components/FormTextInput.vue'
             <span class="text-lg">Drag and drop or click to upload</span>
           </span>
 
-          <span class="flex gap-2 pt-3 text-xs"
+          <span class="flex gap-2 pt-3 text-xs text-neutral-300"
             ><span
               class="inline-block h-4 w-4 bg-[url(images/icon-info.svg)]"
               aria-hidden="true"
