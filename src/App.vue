@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import FormInput from './components/FormInput.vue'
+import FormTextInput from './components/FormTextInput.vue'
 </script>
 
 <template>
@@ -18,9 +18,14 @@ import FormInput from './components/FormInput.vue'
       </section>
 
       <form class="flex flex-col gap-6 pt-8" @submit.prevent>
-        <FormInput id="name" label="Full Name" />
-        <FormInput id="email" label="Email Address" type="email" placeholder="example@email.com" />
-        <FormInput id="github" label="GitHub Username" placeholder="@yourusername" />
+        <FormTextInput id="name" label="Full Name" />
+        <FormTextInput
+          id="email"
+          label="Email Address"
+          type="email"
+          placeholder="example@email.com"
+        />
+        <FormTextInput id="github" label="GitHub Username" placeholder="@yourusername" />
 
         <button type="submit" class="h-14 rounded-xl bg-orange-500 font-bold text-neutral-900">
           Generate My Ticket
