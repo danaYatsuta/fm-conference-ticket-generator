@@ -11,7 +11,7 @@ const { type = 'text', placeholder = '' } = defineProps<Props>()
 
 <template>
   <div>
-    <label :for="id" class="block text-xl">{{ label }}</label>
+    <label :for="id" class="block">{{ label }}</label>
 
     <input
       :id
