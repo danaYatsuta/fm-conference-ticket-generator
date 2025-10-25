@@ -19,10 +19,11 @@ import FormTextInput from './components/FormTextInput.vue'
 
       <form class="flex flex-col gap-6 pt-8" @submit.prevent>
         <label>
+          <input type="file" class="peer h-px w-px opacity-0" />
           <span>Upload Avatar</span>
 
           <span
-            class="mt-2 flex h-32 flex-col items-center justify-center gap-4 rounded-xl border border-dashed border-neutral-500 bg-neutral-700/25"
+            class="mt-2 flex h-32 flex-col items-center justify-center gap-4 rounded-xl border border-dashed border-neutral-500 bg-neutral-700/25 outline-offset-2 outline-neutral-500 peer-focus:outline-2"
           >
             <span
               class="h-12 w-12 rounded-xl border border-neutral-700 bg-neutral-700/50 bg-[url(images/icon-upload.svg)] bg-center bg-no-repeat"
@@ -39,8 +40,6 @@ import FormTextInput from './components/FormTextInput.vue'
             ></span
             >Upload your photo (JPG or PNG, max size: 500KB).</span
           >
-
-          <input type="file" class="hidden" />
         </label>
 
         <FormTextInput id="name" label="Full Name" />
