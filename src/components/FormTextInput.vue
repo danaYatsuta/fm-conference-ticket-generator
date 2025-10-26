@@ -11,13 +11,13 @@ const { type = 'text', placeholder = '' } = defineProps<Props>()
 
 <template>
   <div>
-    <label :for="id" class="block">{{ label }}</label>
+    <label :for="id" class="block pb-2">{{ label }}</label>
 
     <input
       :id
       :type
       :placeholder
-      class="mt-2 h-14 w-full rounded-xl border border-neutral-500 bg-neutral-700/25 px-4 text-lg outline-offset-2 outline-neutral-500 backdrop-blur-md placeholder:text-neutral-300 focus:outline-2"
+      class="h-14 w-full rounded-xl border border-neutral-500 bg-neutral-700/25 px-4 text-lg outline-offset-2 outline-neutral-500 backdrop-blur-md placeholder:text-neutral-300 hover:bg-neutral-700/75 focus:outline-2"
     />
   </div>
 </template>
