@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import FormTextInput from './components/FormTextInput.vue'
+import { ref } from 'vue'
+
+const state = ref<'form' | 'ticket'>('ticket')
 </script>
 
 <template>
@@ -9,55 +12,75 @@ import FormTextInput from './components/FormTextInput.vue'
     </header>
 
     <main class="pt-10">
-      <section class="text-center">
-        <h1 class="text-3xl font-extrabold">Your Journey to Coding Conf 2025 Starts Here!</h1>
+      <template v-if="state === 'form'">
+        <section class="text-center">
+          <h1 class="text-3xl font-extrabold">Your Journey to Coding Conf 2025 Starts Here!</h1>
 
-        <p class="pt-4 font-medium text-neutral-300">
-          Secure your spot at next year's biggest coding conference.
-        </p>
-      </section>
+          <p class="pt-4 font-medium text-neutral-300">
+            Secure your spot at next year's biggest coding conference.
+          </p>
+        </section>
 
-      <form class="flex flex-col gap-6 pt-8" @submit.prevent>
-        <label class="group">
-          <input type="file" class="peer h-px w-px opacity-0" />
-          <span>Upload Avatar</span>
+        <form class="flex flex-col gap-6 pt-8" @submit.prevent="state = 'ticket'">
+          <label class="group">
+            <input type="file" class="peer h-px w-px opacity-0" />
+            <span>Upload Avatar</span>
 
-          <span
-            class="mt-2 flex h-32 flex-col items-center justify-center gap-4 rounded-xl border border-dashed border-neutral-500 bg-neutral-700/25 outline-offset-2 outline-neutral-500 group-hover:bg-neutral-700/75 peer-focus:outline-2"
-          >
             <span
-              class="h-12 w-12 rounded-xl border border-neutral-700 bg-neutral-700/50 bg-[url(images/icon-upload.svg)] bg-center bg-no-repeat"
-              aria-hidden="true"
-            ></span>
+              class="mt-2 flex h-32 flex-col items-center justify-center gap-4 rounded-xl border border-dashed border-neutral-500 bg-neutral-700/25 outline-offset-2 outline-neutral-500 group-hover:bg-neutral-700/75 peer-focus:outline-2"
+            >
+              <span
+                class="h-12 w-12 rounded-xl border border-neutral-700 bg-neutral-700/50 bg-[url(images/icon-upload.svg)] bg-center bg-no-repeat"
+                aria-hidden="true"
+              ></span>
 
-            <span class="text-lg">Drag and drop or click to upload</span>
-          </span>
+              <span class="text-lg">Drag and drop or click to upload</span>
+            </span>
 
-          <span class="flex gap-2 pt-3 text-xs text-neutral-300"
-            ><span
-              class="inline-block h-4 w-4 bg-[url(images/icon-info.svg)]"
-              aria-hidden="true"
-            ></span
-            >Upload your photo (JPG or PNG, max size: 500KB).</span
+            <span class="flex gap-2 pt-3 text-xs text-neutral-300"
+              ><span
+                class="inline-block h-4 w-4 bg-[url(images/icon-info.svg)]"
+                aria-hidden="true"
+              ></span
+              >Upload your photo (JPG or PNG, max size: 500KB).</span
+            >
+          </label>
+
+          <FormTextInput id="name" label="Full Name" />
+          <FormTextInput
+            id="email"
+            label="Email Address"
+            type="email"
+            placeholder="example@email.com"
+          />
+          <FormTextInput id="github" label="GitHub Username" placeholder="@yourusername" />
+
+          <button
+            type="submit"
+            class="h-14 rounded-xl bg-orange-500 font-bold text-neutral-900 outline-offset-2 outline-neutral-300 hover:bg-orange-700 hover:shadow-[0_4px_var(--color-orange-500)] focus:outline-2"
           >
-        </label>
+            Generate My Ticket
+          </button>
+        </form>
+      </template>
 
-        <FormTextInput id="name" label="Full Name" />
-        <FormTextInput
-          id="email"
-          label="Email Address"
-          type="email"
-          placeholder="example@email.com"
-        />
-        <FormTextInput id="github" label="GitHub Username" placeholder="@yourusername" />
+      <template v-else-if="state === 'ticket'">
+        <section class="text-center">
+          <h1 class="text-3xl font-extrabold">
+            Congrats,
+            <span
+              class="from-text-graident-from to-text-graident-to bg-linear-to-r bg-clip-text text-transparent"
+              >Jonatan Kristof</span
+            >! Your ticket is ready.
+          </h1>
 
-        <button
-          type="submit"
-          class="h-14 rounded-xl bg-orange-500 font-bold text-neutral-900 outline-offset-2 outline-neutral-300 hover:bg-orange-700 hover:shadow-[0_4px_var(--color-orange-500)] focus:outline-2"
-        >
-          Generate My Ticket
-        </button>
-      </form>
+          <p class="pt-4 font-medium text-neutral-300">
+            We've emailed your ticket to
+            <span class="text-text-graident-from">jonatan@email.com</span> and will send updates in
+            the run up to the event.
+          </p>
+        </section>
+      </template>
     </main>
   </div>
 </template>
