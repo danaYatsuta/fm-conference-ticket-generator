@@ -51,7 +51,10 @@ import FormTextInput from './components/FormTextInput.vue'
         />
         <FormTextInput id="github" label="GitHub Username" placeholder="@yourusername" />
 
-        <button type="submit" class="h-14 rounded-xl bg-orange-500 font-bold text-neutral-900">
+        <button
+          type="submit"
+          class="h-14 rounded-xl bg-orange-500 font-bold text-neutral-900 outline-offset-2 outline-neutral-300 focus:outline-2"
+        >
           Generate My Ticket
         </button>
       </form>
