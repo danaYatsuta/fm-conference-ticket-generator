@@ -6,7 +6,7 @@ const state = ref<'form' | 'ticket'>('ticket')
 </script>
 
 <template>
-  <div class="background-mobile text-neutral-0 font-inconsolata h-dvh px-4 pt-8 text-xl">
+  <div class="background-mobile text-neutral-0 font-inconsolata h-dvh pt-8 text-xl">
     <header class="flex justify-center">
       <img src="./assets/images/logo-full.svg" alt="Coding Conf logo" class="w-40" />
     </header>
@@ -21,7 +21,7 @@ const state = ref<'form' | 'ticket'>('ticket')
           </p>
         </section>
 
-        <form class="flex flex-col gap-6 pt-8" @submit.prevent="state = 'ticket'">
+        <form class="flex flex-col gap-6 px-4 pt-8" @submit.prevent="state = 'ticket'">
           <label class="group">
             <input type="file" class="peer h-px w-px opacity-0" />
             <span>Upload Avatar</span>
@@ -80,6 +80,40 @@ const state = ref<'form' | 'ticket'>('ticket')
             the run up to the event.
           </p>
         </section>
+
+        <div
+          class="mx-4 mt-16 flex h-40 justify-between bg-[url(images/pattern-ticket.svg)] bg-contain pt-5 pb-4 pl-4"
+        >
+          <div class="flex flex-col justify-between">
+            <div class="flex gap-3">
+              <img src="./assets/images/logo-mark.svg" alt="Coding Conf logo" class="h-8 w-8" />
+
+              <div>
+                <p class="text-2xl leading-none font-bold">Coding Conf</p>
+
+                <p class="pt-2 text-xs text-neutral-300">Jan 31, 2025 / Austin, TX</p>
+              </div>
+            </div>
+
+            <div class="flex gap-3">
+              <div class="h-11 w-11 rounded-md bg-neutral-500"></div>
+
+              <div>
+                <p class="text-lg font-medium">Jonatan Kristof</p>
+
+                <p class="flex items-center gap-1 text-xs text-neutral-300">
+                  <span
+                    aria-hidden="true"
+                    class="h-4 w-4 bg-[url(images/icon-github.svg)] bg-contain"
+                  ></span
+                  >@jonatankristof0101
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <p class="rotate-90 self-center text-neutral-500">#01609</p>
+        </div>
       </template>
     </main>
   </div>
