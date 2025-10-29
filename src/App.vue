@@ -2,11 +2,17 @@
 import FormTextInput from './components/FormTextInput.vue'
 import { ref } from 'vue'
 
-const state = ref<'form' | 'ticket'>('ticket')
+const state = ref<'form' | 'ticket'>('form')
+
+const form = ref({
+  name: '',
+  email: '',
+  github: '',
+})
 </script>
 
 <template>
-  <div class="background-mobile text-neutral-0 font-inconsolata h-dvh pt-8 text-xl">
+  <div class="background-mobile text-neutral-0 font-inconsolata min-h-dvh pt-8 text-xl">
     <header class="flex justify-center">
       <img src="./assets/images/logo-full.svg" alt="Coding Conf logo" class="w-40" />
     </header>
@@ -46,14 +52,24 @@ const state = ref<'form' | 'ticket'>('ticket')
             >
           </label>
 
-          <FormTextInput id="name" label="Full Name" />
+          <FormTextInput id="name" v-model="form.name" label="Full Name" autocomplete="name" />
+
           <FormTextInput
             id="email"
+            v-model="form.email"
             label="Email Address"
             type="email"
             placeholder="example@email.com"
+            autocomplete="email"
           />
-          <FormTextInput id="github" label="GitHub Username" placeholder="@yourusername" />
+
+          <FormTextInput
+            id="github"
+            v-model="form.github"
+            label="GitHub Username"
+            placeholder="@yourusername"
+            autocomplete="username"
+          />
 
           <button
             type="submit"
@@ -70,13 +86,13 @@ const state = ref<'form' | 'ticket'>('ticket')
             Congrats,
             <span
               class="from-text-graident-from to-text-graident-to bg-linear-to-r bg-clip-text text-transparent"
-              >Jonatan Kristof</span
+              >{{ form.name }}</span
             >! Your ticket is ready.
           </h1>
 
           <p class="pt-4 font-medium text-neutral-300">
             We've emailed your ticket to
-            <span class="text-text-graident-from">jonatan@email.com</span> and will send updates in
+            <span class="text-text-graident-from">{{ form.email }}</span> and will send updates in
             the run up to the event.
           </p>
         </section>
@@ -99,14 +115,14 @@ const state = ref<'form' | 'ticket'>('ticket')
               <div class="h-11 w-11 rounded-md bg-neutral-500"></div>
 
               <div>
-                <p class="text-lg font-medium">Jonatan Kristof</p>
+                <p class="text-lg font-medium">{{ form.name }}</p>
 
                 <p class="flex items-center gap-1 text-xs text-neutral-300">
                   <span
                     aria-hidden="true"
                     class="h-4 w-4 bg-[url(images/icon-github.svg)] bg-contain"
                   ></span
-                  >@jonatankristof0101
+                  >{{ form.github }}
                 </p>
               </div>
             </div>

@@ -4,9 +4,12 @@ interface Props {
   label: string
   type?: string
   placeholder?: string
+  autocomplete?: string
 }
 
-const { type = 'text', placeholder = '' } = defineProps<Props>()
+const { type = 'text', placeholder = '', autocomplete = '' } = defineProps<Props>()
+
+const model = defineModel<string>()
 </script>
 
 <template>
@@ -15,8 +18,10 @@ const { type = 'text', placeholder = '' } = defineProps<Props>()
 
     <input
       :id
+      v-model.lazy.trim="model"
       :type
       :placeholder
+      :autocomplete
       class="h-14 w-full rounded-xl border border-neutral-500 bg-neutral-700/25 px-4 text-lg outline-offset-2 outline-neutral-500 backdrop-blur-md placeholder:text-neutral-300 hover:bg-neutral-700/75 focus:outline-2"
     />
   </div>
