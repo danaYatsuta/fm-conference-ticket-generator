@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import FormTextInput from './components/FormTextInput.vue'
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 
 const state = ref<'form' | 'ticket'>('form')
 
@@ -9,6 +9,71 @@ const form = ref({
   email: '',
   github: '',
 })
+
+const formErrors = ref({
+  name: '',
+  email: '',
+  github: '',
+})
+
+function validateName() {
+  if (form.value.name === '') {
+    formErrors.value.name = 'Please enter a name.'
+  } else {
+    formErrors.value.name = ''
+  }
+}
+
+function validateEmail() {
+  if (form.value.email === '') {
+    formErrors.value.email = 'Please enter an email address.'
+  } else if (!/^[^@]+@[^@]+$/.test(form.value.email)) {
+    formErrors.value.email = 'Please enter a valid email address.'
+  } else {
+    formErrors.value.email = ''
+  }
+}
+
+function validateGithub() {
+  if (form.value.github === '') {
+    formErrors.value.github = 'Please enter a GitHub username.'
+  } else if (
+    !/^@[a-zA-Z0-9\-]+$/.test(form.value.github) ||
+    form.value.github.startsWith('@-') ||
+    form.value.github.endsWith('-') ||
+    form.value.github.includes('--')
+  ) {
+    formErrors.value.github = 'Please enter a valid GitHub username.'
+  } else {
+    formErrors.value.github = ''
+  }
+}
+
+watch(() => form.value.name, validateName)
+watch(() => form.value.email, validateEmail)
+watch(
+  () => form.value.github,
+  () => {
+    if (!form.value.github.startsWith('@')) {
+      form.value.github = '@' + form.value.github
+    }
+
+    validateGithub()
+  },
+)
+
+function onSubmit() {
+  validateName()
+  validateEmail()
+  validateGithub()
+
+  for (const formError of Object.values(formErrors.value)) {
+    console.log(formError)
+    if (formError !== '') return
+  }
+
+  state.value = 'ticket'
+}
 </script>
 
 <template>
@@ -27,7 +92,7 @@ const form = ref({
           </p>
         </section>
 
-        <form class="flex flex-col gap-6 px-4 pt-8" @submit.prevent="state = 'ticket'">
+        <form class="flex flex-col gap-6 px-4 pt-8" @submit.prevent="onSubmit">
           <label class="group">
             <input type="file" class="peer h-px w-px opacity-0" />
             <span>Upload Avatar</span>
