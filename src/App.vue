@@ -82,7 +82,7 @@ function onSubmit() {
       <img src="./assets/images/logo-full.svg" alt="Coding Conf logo" class="w-40" />
     </header>
 
-    <main class="pt-10">
+    <main class="px-4 pt-10">
       <template v-if="state === 'form'">
         <section class="text-center">
           <h1 class="text-3xl font-extrabold">Your Journey to Coding Conf 2025 Starts Here!</h1>
@@ -92,13 +92,13 @@ function onSubmit() {
           </p>
         </section>
 
-        <form class="flex flex-col px-4 pt-8" @submit.prevent="onSubmit">
+        <form class="flex flex-col pt-8" @submit.prevent="onSubmit">
           <label class="group">
             <input type="file" class="peer h-px w-px opacity-0" />
-            <span>Upload Avatar</span>
+            <span class="font-medium">Upload Avatar</span>
 
             <span
-              class="mt-2 flex h-32 flex-col items-center justify-center gap-4 rounded-xl border border-dashed border-neutral-500 bg-neutral-700/25 outline-offset-2 outline-neutral-500 group-hover:bg-neutral-700/75 peer-focus:outline-2"
+              class="mt-2 flex h-32 flex-col items-center justify-center gap-4 rounded-xl border border-dashed border-neutral-500 bg-neutral-700/30 outline-offset-2 outline-neutral-500 group-hover:bg-neutral-700/75 peer-focus:outline-2"
             >
               <span
                 class="flex h-12 w-12 items-center justify-center rounded-xl border border-neutral-700 bg-neutral-700/50"
@@ -106,7 +106,7 @@ function onSubmit() {
                 <img src="./assets/images/icon-upload.svg" aria-hidden="true" />
               </span>
 
-              <span class="text-lg">Drag and drop or click to upload</span>
+              <span class="text-lg text-neutral-300">Drag and drop or click to upload</span>
             </span>
 
             <span class="flex gap-2 pt-3 text-xs text-neutral-300"
@@ -170,7 +170,7 @@ function onSubmit() {
         </section>
 
         <div
-          class="mx-4 mt-16 flex h-40 justify-between bg-[url(images/pattern-ticket.svg)] bg-contain pt-5 pb-4 pl-4"
+          class="mt-16 flex h-40 justify-between bg-[url(images/pattern-ticket.svg)] bg-contain pt-5 pb-4 pl-4"
         >
           <div class="flex flex-col justify-between">
             <div class="flex gap-3">

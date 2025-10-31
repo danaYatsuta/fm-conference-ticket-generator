@@ -15,7 +15,7 @@ const model = defineModel<string>()
 
 <template>
   <div>
-    <label :for="id" class="block pb-2">{{ label }}</label>
+    <label :for="id" class="block pb-2 font-medium">{{ label }}</label>
 
     <input
       :id
@@ -23,7 +23,7 @@ const model = defineModel<string>()
       :type
       :placeholder
       :autocomplete
-      class="h-14 w-full rounded-xl border border-neutral-500 bg-neutral-700/25 px-4 text-lg outline-offset-2 outline-neutral-500 backdrop-blur-md placeholder:text-neutral-300 hover:bg-neutral-700/75 focus:outline-2"
+      class="h-14 w-full rounded-xl border border-neutral-500 bg-neutral-700/30 px-4 text-lg outline-offset-2 outline-neutral-500 backdrop-blur-md placeholder:text-neutral-300 hover:bg-neutral-700/75 focus:outline-2"
     />
 
     <p :class="{ invisible: !error }" class="flex gap-2 py-1 text-xs text-orange-500">

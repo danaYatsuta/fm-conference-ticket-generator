@@ -19,6 +19,8 @@
   --color-text-graident-to: hsl(0, 0%, 100%);
 
   --font-inconsolata: 'Inconsolata', monospace;
+
+  --text-3xl: 1.75rem;
 }
 
 .background-mobile {
