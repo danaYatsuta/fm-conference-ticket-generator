@@ -82,8 +82,8 @@ function onSubmit() {
       <img src="./assets/images/logo-full.svg" alt="Coding Conf logo" class="w-40" />
     </header>
 
-    <main class="px-4 pt-10">
-      <template v-if="state === 'form'">
+    <main class="pt-10">
+      <div v-if="state === 'form'" class="px-4">
         <section class="text-center">
           <h1 class="text-3xl font-extrabold">Your Journey to Coding Conf 2025 Starts Here!</h1>
 
@@ -150,10 +150,10 @@ function onSubmit() {
             Generate My Ticket
           </button>
         </form>
-      </template>
+      </div>
 
-      <template v-else-if="state === 'ticket'">
-        <section class="text-center">
+      <div v-else-if="state === 'ticket'">
+        <section class="px-2 text-center">
           <h1 class="text-3xl font-extrabold">
             Congrats,
             <span
@@ -164,13 +164,13 @@ function onSubmit() {
 
           <p class="pt-4 font-medium text-neutral-300">
             We've emailed your ticket to
-            <span class="text-text-graident-from">{{ form.email }}</span> and will send updates in
-            the run up to the event.
+            <span class="text-orange-500">{{ form.email }}</span> and will send updates in the run
+            up to the event.
           </p>
         </section>
 
         <div
-          class="mt-16 flex h-40 justify-between bg-[url(images/pattern-ticket.svg)] bg-contain pt-5 pb-4 pl-4"
+          class="mx-4 mt-16 flex h-40 justify-between bg-[url(images/pattern-ticket.svg)] bg-contain pt-5 pb-4 pl-4"
         >
           <div class="flex flex-col justify-between">
             <div class="flex gap-3">
@@ -179,7 +179,7 @@ function onSubmit() {
               <div>
                 <p class="text-2xl leading-none font-bold">Coding Conf</p>
 
-                <p class="pt-2 text-xs text-neutral-300">Jan 31, 2025 / Austin, TX</p>
+                <p class="pt-2 text-sm text-neutral-300">Jan 31, 2025 / Austin, TX</p>
               </div>
             </div>
 
@@ -189,7 +189,7 @@ function onSubmit() {
               <div>
                 <p class="text-lg font-medium">{{ form.name }}</p>
 
-                <p class="flex gap-1 text-xs text-neutral-300">
+                <p class="flex gap-1 text-sm text-neutral-300">
                   <img src="./assets/images/icon-github.svg" aria-hidden="true" class="h-4 w-4" />
                   {{ form.github }}
                 </p>
@@ -197,9 +197,9 @@ function onSubmit() {
             </div>
           </div>
 
-          <p class="rotate-90 self-center text-neutral-500">#01609</p>
+          <p class="rotate-90 self-center font-medium text-neutral-500">#01609</p>
         </div>
-      </template>
+      </div>
     </main>
   </div>
 </template>
