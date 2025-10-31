@@ -110,8 +110,8 @@ function onSubmit() {
             </span>
 
             <span class="flex gap-2 pt-3 text-xs text-neutral-300"
-              ><img src="./assets/images/icon-info.svg" class="h-4 w-4" aria-hidden="true" />Upload
-              your photo (JPG or PNG, max size: 500KB).</span
+              ><img src="./assets/images/icon-info.svg" aria-hidden="true" />Upload your photo (JPG
+              or PNG, max size: 500KB).</span
             >
           </label>
 

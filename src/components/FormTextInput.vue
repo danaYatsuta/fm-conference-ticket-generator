@@ -27,7 +27,7 @@ const model = defineModel<string>()
     />
 
     <p :class="{ invisible: !error }" class="flex gap-2 py-1 text-xs text-orange-500">
-      <span aria-hidden="true" class="h-4 w-4 bg-orange-500 mask-[url(images/icon-info.svg)]" />
+      <img src="../assets/images/icon-error.svg" aria-hidden="true" />
       {{ error ? error : '&nbsp;' }}
     </p>
   </div>
