@@ -92,7 +92,7 @@ function onSubmit() {
           </p>
         </section>
 
-        <form class="flex flex-col gap-6 px-4 pt-8" @submit.prevent="onSubmit">
+        <form class="flex flex-col px-4 pt-8" @submit.prevent="onSubmit">
           <label class="group">
             <input type="file" class="peer h-px w-px opacity-0" />
             <span>Upload Avatar</span>
@@ -117,11 +117,19 @@ function onSubmit() {
             >
           </label>
 
-          <FormTextInput id="name" v-model="form.name" label="Full Name" autocomplete="name" />
+          <FormTextInput
+            id="name"
+            v-model="form.name"
+            :error="formErrors.name"
+            label="Full Name"
+            autocomplete="name"
+            class="pt-6"
+          />
 
           <FormTextInput
             id="email"
             v-model="form.email"
+            :error="formErrors.email"
             label="Email Address"
             type="email"
             placeholder="example@email.com"
@@ -131,6 +139,7 @@ function onSubmit() {
           <FormTextInput
             id="github"
             v-model="form.github"
+            :error="formErrors.github"
             label="GitHub Username"
             placeholder="@yourusername"
             autocomplete="username"

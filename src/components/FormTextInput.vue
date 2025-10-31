@@ -2,6 +2,7 @@
 interface Props {
   id: string
   label: string
+  error: string
   type?: string
   placeholder?: string
   autocomplete?: string
@@ -24,5 +25,10 @@ const model = defineModel<string>()
       :autocomplete
       class="h-14 w-full rounded-xl border border-neutral-500 bg-neutral-700/25 px-4 text-lg outline-offset-2 outline-neutral-500 backdrop-blur-md placeholder:text-neutral-300 hover:bg-neutral-700/75 focus:outline-2"
     />
+
+    <p :class="{ invisible: !error }" class="flex gap-2 py-1 text-xs text-orange-500">
+      <span aria-hidden="true" class="h-4 w-4 bg-orange-500 mask-[url(images/icon-info.svg)]" />
+      {{ error ? error : '&nbsp;' }}
+    </p>
   </div>
 </template>
